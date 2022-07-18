@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx_flutter/GetX%20stateManagent/reactive.dart';
 import 'package:getx_flutter/Getx%20Route/named_route.dart';
 import 'package:getx_flutter/Getx%20Route/pages/homepage.dart';
+import 'package:getx_flutter/Getx%20imagePicker/imagePicker_screen.dart';
 import 'package:getx_flutter/GetxServices/service.dart';
 import 'package:getx_flutter/GetxServices/servicePage.dart';
 import 'package:getx_flutter/GexBindings/initial_bindings.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: InitialBinging(),
-      home: ServicePage(),
+      home: CameraPageScreen(),
       getPages: [
         GetPage(name: '/homePage', page: () => HomePage()),
         GetPage(name: '/showsnack', page: () => ShowSnackBar()),
