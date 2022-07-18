@@ -19,15 +19,17 @@ class NamedRoute extends StatelessWidget {
               style: TextStyle(fontSize: 24),
             ),
             ElevatedButton(
-                onPressed: () {
-                  Get.to(HomePage());
-                },
-                child: const Text('Go to HomePage')),
+              onPressed: () {
+                Get.to(HomePage());
+              },
+              child: const Text('Go to HomePage'),
+            ),
             ElevatedButton(
-                onPressed: () {
-                  Get.offAll(ShowSnackBar());
-                },
-                child: const Text('Go to show snack bar  Screen')),
+              onPressed: () {
+                Get.offAll(ShowSnackBar());
+              },
+              child: const Text('Go to show snack bar  Screen'),
+            ),
           ],
         ),
       ),
