@@ -10,6 +10,7 @@ import 'package:getx_flutter/GetxServices/service.dart';
 import 'package:getx_flutter/GetxServices/servicePage.dart';
 import 'package:getx_flutter/GexBindings/initial_bindings.dart';
 import 'package:getx_flutter/dependency%20injection/injection.dart';
+import 'package:getx_flutter/shimmer%20effect/shimmer_effect_screen.dart';
 import 'package:getx_flutter/show%20snackbar%20dialogbox,%20bottomsheet/show_snackBar.dart';
 
 import 'GetxServices/init_function.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: InitialBinging(),
-      home: MotionTabBarScreen(),
+      home: ShimmerEffectScreen(),
       getPages: [
         GetPage(name: '/homePage', page: () => HomePage()),
         GetPage(name: '/showsnack', page: () => ShowSnackBar()),
