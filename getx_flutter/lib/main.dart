@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_flutter/FilterList%20App/filter_app_home.dart';
 import 'package:getx_flutter/GetX%20stateManagent/reactive.dart';
 import 'package:getx_flutter/Getx%20MotionTabBar/motion_tab_bar.dart';
 import 'package:getx_flutter/Getx%20Route/named_route.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       initialBinding: InitialBinging(),
-      home: ShimmerEffectScreen(),
+      home: FilterListApp(),
       getPages: [
         GetPage(name: '/homePage', page: () => HomePage()),
         GetPage(name: '/showsnack', page: () => ShowSnackBar()),
