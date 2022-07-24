@@ -11,7 +11,7 @@ class Product {
     required this.imageUrl,
   });
 
-  Product fromSnapshot(DocumentSnapshot snap) {
+  static Product fromSnapshot(DocumentSnapshot snap) {
     return Product(
       name: snap['name'],
       price: snap['price'],

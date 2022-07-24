@@ -13,14 +13,15 @@ import 'package:getx_flutter/GetxServices/servicePage.dart';
 import 'package:getx_flutter/GexBindings/initial_bindings.dart';
 import 'package:getx_flutter/dependency%20injection/injection.dart';
 import 'package:getx_flutter/shimmer%20effect/shimmer_effect_screen.dart';
-import 'package:getx_flutter/shopping%20cart/shopping_page.dart';
+import 'package:getx_flutter/shopping%20cart/views/shopping_page.dart';
+import 'package:getx_flutter/shopping%20cart/views/shopping_page.dart';
 import 'package:getx_flutter/show%20snackbar%20dialogbox,%20bottomsheet/show_snackBar.dart';
 
 import 'GetxServices/init_function.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
 
@@ -31,8 +32,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'GetX_Starter',
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+        primaryColor: Color(0xffc0b7b1),
+      ),
       initialBinding: InitialBinging(),
       home: const ShoppingPage(),
       getPages: [
