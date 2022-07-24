@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "706069620467",
+    "project_id": "getx-shopping-cart-32acf",
+    "storage_bucket": "getx-shopping-cart-32acf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706069620467:android:b861b140644f71b0e7b986",
+        "android_client_info": {
+          "package_name": "com.example.getx_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706069620467-dun294s70906p4mo1u5okg3gtunrlcmh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPEbSY4GaNCwxGP5C74pTXi7FLXwVPwRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706069620467-dun294s70906p4mo1u5okg3gtunrlcmh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
