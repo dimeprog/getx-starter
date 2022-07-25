@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_flutter/FilterList%20App/filter_app_home.dart';
 import 'package:getx_flutter/GetX%20stateManagent/reactive.dart';
+import 'package:getx_flutter/Getx%20&%20firebase/root.dart';
 import 'package:getx_flutter/Getx%20MotionTabBar/motion_tab_bar.dart';
 import 'package:getx_flutter/Getx%20Route/named_route.dart';
 import 'package:getx_flutter/Getx%20Route/pages/homepage.dart';
@@ -18,6 +19,9 @@ import 'package:getx_flutter/shopping%20cart/views/shopping_page.dart';
 import 'package:getx_flutter/show%20snackbar%20dialogbox,%20bottomsheet/show_snackBar.dart';
 
 import 'GetxServices/init_function.dart';
+
+String regExpression =
+    r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,10 +39,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'GetX_Starter',
       theme: ThemeData(
-        primaryColor: Color(0xffc0b7b1),
+        primaryColor: Colors.teal,
       ),
       initialBinding: InitialBinging(),
-      home: const ShoppingPage(),
+      home: const Root(),
       getPages: [
         GetPage(name: '/homePage', page: () => HomePage()),
         GetPage(name: '/showsnack', page: () => ShowSnackBar()),
