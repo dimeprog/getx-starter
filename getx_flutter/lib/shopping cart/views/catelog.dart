@@ -100,7 +100,9 @@ class CatelogSampleCard extends StatelessWidget {
             width: 5,
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              cartContoller.addProductToCart(product);
+            },
             icon: const Icon(
               Icons.shopping_cart_outlined,
               color: Colors.amber,

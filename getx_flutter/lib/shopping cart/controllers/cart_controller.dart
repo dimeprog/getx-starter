@@ -7,7 +7,7 @@ class CartController extends GetxController {
   final _products = {}.obs;
 
   // getters
-  get product => _products;
+  get products => _products;
   get productSubtotal => _products.entries
       .map(
         (product) => product.key.price * product.value,
@@ -31,7 +31,7 @@ class CartController extends GetxController {
     Get.snackbar(
       'Added a product',
       'You just added a new product to cart',
-      snackPosition: SnackPosition.BOTTOM,
+      snackPosition: SnackPosition.TOP,
       duration: const Duration(
         seconds: 2,
       ),
