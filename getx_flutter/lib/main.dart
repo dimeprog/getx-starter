@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_flutter/FilterList%20App/filter_app_home.dart';
 import 'package:getx_flutter/GetX%20stateManagent/reactive.dart';
+import 'package:getx_flutter/Getx%20&%20firebase/controller_bindings.dart';
 import 'package:getx_flutter/Getx%20&%20firebase/root.dart';
 import 'package:getx_flutter/Getx%20MotionTabBar/motion_tab_bar.dart';
 import 'package:getx_flutter/Getx%20Route/named_route.dart';
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.teal,
       ),
-      initialBinding: InitialBinging(),
+      initialBinding: ControllerBindings(),
       home: const Root(),
       getPages: [
         GetPage(name: '/homePage', page: () => HomePage()),
