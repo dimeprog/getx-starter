@@ -32,7 +32,7 @@ class TextAndTextButton extends StatelessWidget {
           child: Text(
             textButtonTitle!,
             style: TextStyle(
-              color: Colors.blue,
+              color: Colors.teal,
               fontSize: getHeight(18),
               fontWeight: FontWeight.w500,
             ),
