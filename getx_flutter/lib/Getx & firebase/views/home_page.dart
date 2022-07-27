@@ -7,7 +7,8 @@ import 'package:getx_flutter/Getx%20&%20firebase/controllers/auth_controller.dar
 import 'package:getx_flutter/Getx%20&%20firebase/utils/rounded_elevated_button.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
+  AuthController _authController = Get.put(AuthController());
 
   @override
   Widget build(BuildContext context) {
@@ -34,43 +35,54 @@ class HomePage extends StatelessWidget {
           SizedBox(
             height: getWidth(30),
           ),
-          GetBuilder<AuthController>(builder: (controller) {
-            return Center(
-              child: Column(
-                children: [
-                  controller.displayProfilePhoto == ''
-                      ? Image.asset(
-                          'assets/avatar.jpg',
-                          fit: BoxFit.cover,
-                          height: getHeight(100),
-                          width: getWidth(160),
-                        )
-                      : Image.network(
-                          controller.displayProfilePhoto,
-                          fit: BoxFit.cover,
-                          height: getHeight(100),
-                          width: getWidth(160),
-                        ),
-                  const SizedBox(
-                    height: 12,
-                  ),
-                  Text(
-                    controller.displayName,
-                    style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 20,
-                      fontWeight: FontWeight.normal,
+          GetBuilder<AuthController>(
+            builder: (controller) {
+              return Center(
+                child: Column(
+                  children: [
+                    controller.displayProfilePhoto == ''
+                        ? Image.asset(
+                            'assets/avatar.jpg',
+                            fit: BoxFit.cover,
+                            height: getHeight(160),
+                            width: getWidth(160),
+                          )
+                        : Image.network(
+                            controller.displayProfilePhoto,
+                            fit: BoxFit.cover,
+                            height: getHeight(200),
+                            width: getWidth(160),
+                          ),
+                    SizedBox(
+                      height: getHeight(30),
                     ),
-                  )
-                ],
-              ),
-            );
-          }),
+                    Text(
+                      controller.displayName,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontSize: 28,
+                        fontWeight: FontWeight.w900,
+                      ),
+                    )
+                  ],
+                ),
+              );
+            },
+          ),
+          SizedBox(
+            height: getHeight(30),
+          ),
           Center(
-            child: RoundedElevatedButton(
-              onPressed: () {},
-              title: 'Go to Products',
-              padding: EdgeInsets.symmetric(vertical: getHeight(10)),
+            child: SizedBox(
+              width: getWidth(100),
+              child: RoundedElevatedButton(
+                onPressed: () {
+                  Get.find<AuthController>().signOut();
+                  Get.back();
+                },
+                title: 'Sign Out',
+                padding: EdgeInsets.symmetric(vertical: getHeight(10)),
+              ),
             ),
           )
         ],

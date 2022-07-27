@@ -90,6 +90,7 @@ class SignUpPage extends StatelessWidget {
                     RoundedTextField(
                       key: ValueKey(3),
                       controller: _passwordController,
+                      obsecure: true,
                       hintText: ' Password',
                       validator: (val) {
                         if (val.toString().length < 6) {
@@ -104,9 +105,10 @@ class SignUpPage extends StatelessWidget {
                     RoundedTextField(
                       key: ValueKey(4),
                       controller: _confirmPasswordController,
+                      obsecure: true,
                       hintText: '  Confirm Password',
                       validator: (val) {
-                        if (val.toString() != _passwordController.text) {
+                        if (val.trim() != _passwordController.text.trim()) {
                           return 'Password does not match';
                         }
                         return null;
@@ -118,23 +120,19 @@ class SignUpPage extends StatelessWidget {
                     RoundedElevatedButton(
                       onPressed: () async {
                         if (_formKey.currentState!.validate()) {
-                          String name = _nameController.text;
-                          String email = _emailController.text;
-                          String password = _passwordController.text;
-                          await _authController
-                              .signUp(name, email, password)
-                              .then((value) {
-                            Get.offAll(() => const HomePage());
-                            print('conpleted');
-                            Get.snackbar(
-                              'sucessful',
-                              'Congratulations ...',
-                              snackPosition: SnackPosition.BOTTOM,
-                              backgroundColor: Colors.green,
-                              colorText: Colors.white,
-                              snackStyle: SnackStyle.FLOATING,
-                            );
-                          });
+                          String name = _nameController.text.trim();
+                          String email = _emailController.text.trim();
+                          String password = _passwordController.text.trim();
+                          _authController.signUp(name, email, password);
+
+                          Get.snackbar(
+                            'sucessful',
+                            'Congratulations ...',
+                            snackPosition: SnackPosition.BOTTOM,
+                            backgroundColor: Colors.green,
+                            colorText: Colors.white,
+                            snackStyle: SnackStyle.FLOATING,
+                          );
                         } else {
                           Get.snackbar(
                             'unsucessful',
@@ -156,11 +154,12 @@ class SignUpPage extends StatelessWidget {
                       height: getHeight(5),
                     ),
                     TextAndTextButton(
-                        text: 'Already have an account?',
-                        textButtonTitle: 'Sign up',
-                        onPressed: () {
-                          Get.offAll(() => const SignInPage());
-                        }),
+                      text: 'Already have an account?',
+                      textButtonTitle: 'Login',
+                      onPressed: () {
+                        Get.offAll(() => SignInPage());
+                      },
+                    ),
                   ],
                 ),
               ),

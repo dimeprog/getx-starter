@@ -22,8 +22,8 @@ class Root extends StatelessWidget {
           return SafeArea(
             child: FirebaseAuth.instance.currentUser != null ||
                     controller.isSignIn == true
-                ? const HomePage()
-                : SignUpPage(),
+                ? HomePage()
+                : SignInPage(),
           );
         },
       ),
