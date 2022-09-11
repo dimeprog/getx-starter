@@ -21,7 +21,7 @@ class StateWithController extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    RaisedButton(
+                    ElevatedButton(
                       onPressed: controller.increament,
                       child: Icon(Icons.add),
                     ),
@@ -32,7 +32,7 @@ class StateWithController extends StatelessWidget {
                         color: Colors.red,
                       ),
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       onPressed: controller.decreament,
                       child: const Icon(Icons.remove),
                     ),

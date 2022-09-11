@@ -37,9 +37,11 @@ class DialogHelper {
                   fontWeight: FontWeight.w500,
                 ),
               ),
-              RaisedButton(
-                color: Colors.blue,
-                elevation: 5,
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  elevation: 5,
+                ),
                 onPressed: () {
                   if (Get.isDialogOpen!) Get.back();
                 },
