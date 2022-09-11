@@ -26,11 +26,13 @@ class Catelog extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.bottomCenter,
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                backgroundColor: Colors.amber.withOpacity(0.5),
               ),
-              color: Colors.amber.withOpacity(0.5),
               onPressed: () => Get.to(() => CartPage()),
               child: const Text(
                 'to cart',
